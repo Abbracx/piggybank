@@ -16,7 +16,7 @@ class Category(models.Model):
     def __str__(self):
         return self.name
 
-class Transactions(models.Model):
+class Transaction(models.Model):
 
     amount = models.DecimalField(max_digits=15, decimal_places=2)
     currency = models.ForeignKey(Currency, on_delete=models.PROTECT, related_name='transactions')

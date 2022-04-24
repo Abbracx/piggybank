@@ -7,6 +7,7 @@ from core import views
 router = routers.SimpleRouter()
 
 router.register(r'category', views.CategoryModelViewSet, basename='category')
+router.register(r'transaction', views.TransactionModelViewSet, basename='transaction')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
