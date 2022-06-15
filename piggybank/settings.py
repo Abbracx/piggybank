@@ -40,6 +40,7 @@ INSTALLED_APPS = [
 
     'core.apps.CoreConfig',
     'rest_framework',
+    'rest_framework.authtoken',
     'django_filters'
 
 ]
@@ -76,6 +77,13 @@ WSGI_APPLICATION = 'piggybank.wsgi.application'
 
 
 REST_FRAMEWORK = {
+
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        # 'rest_framework.authentication.BasicAuthentication', # Sending username and password on the header
+        # 'rest_framework.authentication.SessionAuthentication', # Works based on cookie authentication
+        'rest_framework.authentication.TokenAuthentication',
+    ],
+
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE': 10 
 }
